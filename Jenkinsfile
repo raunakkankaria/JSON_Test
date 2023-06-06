@@ -3,6 +3,7 @@ pipeline {
     environment {
         def jsonContent = readFile(file: 'sample.json')
         def json = readJSON(text: jsonContent)
+        println "Regions: ${json.regions}"
 //         def json = new groovy.json.JsonSlurper().parseText(jsonContent)
     }
     stages {
@@ -10,14 +11,13 @@ pipeline {
             steps {
                 script {
                     echo json
-                    assert json['service'] == 'aws-workflow-elb-accesslogs-avm'
-//                     def enabledRegions = json.regions.findAll { region ->
-//                         region.enable == true
-//                     }
+                    def enabledRegions = json.regions.findAll { region ->
+                        region.enable == true
+                    }
 
-//                     enabledRegions.each { region ->
-//                         echo "Enable value for region ${region.name}: ${region.enable}"
-//                     }
+                    enabledRegions.each { region ->
+                        echo "Enable value for region ${region.name}: ${region.enable}"
+                    }
                 }
             }
         }
