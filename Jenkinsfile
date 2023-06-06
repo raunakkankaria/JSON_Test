@@ -1,8 +1,10 @@
+import groovy.json.JsonSlurper
+
 pipeline {
     agent any
     environment {
         def jsonContent = readFile(file: 'sample.json')
-        def json = readJSON(text: jsonContent)
+        def json = new JsonSlurper().parseText(jsonContent)
     }
     stages {
         stage('Read JSON File') {
