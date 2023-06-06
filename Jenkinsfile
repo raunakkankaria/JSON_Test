@@ -3,7 +3,6 @@ pipeline {
     environment {
         def jsonContent = readFile(file: 'sample.json')
         def json = readJSON(text: jsonContent)
-        echo "Regions: ${json.regions}"
 //         def json = new groovy.json.JsonSlurper().parseText(jsonContent)
     }
     stages {
@@ -11,6 +10,7 @@ pipeline {
             steps {
                 script {
                     echo json
+                    echo "Regions: ${json.regions}"
                     def enabledRegions = json.regions.findAll { region ->
                         region.enable == true
                     }
