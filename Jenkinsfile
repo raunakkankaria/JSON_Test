@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        def jsonContent = readFile(file: 'path/to/your/json/file.json')
+        def jsonContent = readFile(file: 'sample.json')
         def json = readJSON(text: jsonContent)
     }
     stages {
