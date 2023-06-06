@@ -8,10 +8,14 @@ pipeline {
         stage('Read JSON File') {
             steps {
                 script {
-                    def regions = json.regions
-                    regions.each { region ->
-                        echo "Region: ${region.name}"
-                        echo "Enabled: ${region.enable}"
+                    def regions = json.get('regions')
+                    if (regions != null) {
+                        regions.each { region ->
+                            echo "Region: ${region.name}"
+                            echo "Enabled: ${region.enable}"
+                        }
+                    } else {
+                        echo "No regions found in JSON file."
                     }
                 }
             }
