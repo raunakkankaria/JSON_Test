@@ -3,7 +3,7 @@ pipeline {
     environment {
         def jsonContent = readFile(file: 'sample.json')
         def json = readJSON(text: jsonContent)
-        println "Regions: ${json.regions}"
+        echo "Regions: ${json.regions}"
 //         def json = new groovy.json.JsonSlurper().parseText(jsonContent)
     }
     stages {
