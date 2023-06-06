@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     echo json
-                    echo json['service']
+                    assert json['service'] == 'aws-workflow-elb-accesslogs-avm'
 //                     def enabledRegions = json.regions.findAll { region ->
 //                         region.enable == true
 //                     }
