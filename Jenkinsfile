@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         def jsonContent = readFile(file: 'sample.json')
-        def json = readJsonSlurper(text: jsonContent)
+        def json = readJSON(text: jsonContent)
     }
     stages {
         stage('Read JSON File') {
