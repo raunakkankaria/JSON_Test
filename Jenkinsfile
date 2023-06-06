@@ -9,8 +9,16 @@ pipeline {
             steps {
                 script {
                         echo json
-                        json.regions.each { region ->
-                        echo "Enable value for region ${region.name}: ${region.enable}"
+                        def enabledRegions = json.regions.findAll { region ->
+                            region.enable == true
+                        }
+
+                        enabledRegions.each { region ->
+                            echo "Enable value for region ${region.name}: ${region.enable}"
+                        }
+//                         json.regions.each {
+//                         echo "Enable value for region ${region.name}: ${region.enable}"
+                            
                     }
                 }
             }
