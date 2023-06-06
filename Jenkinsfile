@@ -1,3 +1,6 @@
+import groovy.json.JsonSlurper
+
+@NonCPS
 pipeline {
     agent any
     environment {
