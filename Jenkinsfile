@@ -9,6 +9,7 @@ pipeline {
             steps {
                 script {
                     echo json
+                    echo json['regions'][0]
                     def enabledRegions = json.regions.findAll { region ->
                         region.enable == true
                     }
