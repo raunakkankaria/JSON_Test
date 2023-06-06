@@ -18,8 +18,8 @@ pipeline {
                         }
 //                         json.regions.each {
 //                         echo "Enable value for region ${region.name}: ${region.enable}"
-                            
-                    }
+//                             
+//                     }
                 }
             }
         }
