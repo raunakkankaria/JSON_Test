@@ -1,4 +1,4 @@
-// import groovy.json.JsonSlurper
+import groovy.json.JsonSlurper
 // pipeline {
 //     agent any
 //     environment {
@@ -21,11 +21,11 @@
 // }
 
 node {
-  stage('Read JSON File') {
-    // Read the JSON file
+  environment {
     def jsonContent = readFile(file: 'sample.json')
     def json = new groovy.json.JsonSlurper().parseText(jsonContent)
-
+  }
+  stage('Read JSON File') {
     // Iterate over the regions
     json.regions.each { region ->
       echo "Region: ${region.name}"
