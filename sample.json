@@ -2,13 +2,13 @@
   "service": "aws-workflow-elb-accesslogs-avm",
   "regions": [
     {
-      "name": "us-east-1",
-      "version": "1.0.20",
+      "name": "us-east-3",
+      "version": "1.0.21",
       "enable": false
     },
     {
-      "name": "eu-west-2",
-      "version": "1.0.18",
+      "name": "eu-west-1",
+      "version": "1.0.28",
       "enable": false
     }
   ]
