@@ -2,8 +2,8 @@ node {
   stage('Read JSON File') {
     // Read the JSON file
     def jsonContent = readFile(file: 'sample.json')
-    def json = new groovy.json.JsonSlurper().parseText(jsonContent)
-    sh "echo ${jsonContent}"
+    def json = new groovy.json.JsonSlurperClassic().parseText(jsonContent)
+    sh "echo ${json}"
     // Iterate over the regions
     json.regions.each { region ->
       echo "Region: ${region.name}"
