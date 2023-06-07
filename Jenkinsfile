@@ -1,4 +1,7 @@
 node {
+  stage('Checkout from Git') {
+    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/raunakkankaria/JSON_Test.git']])
+  }
   stage('Read JSON File') {
     // Read the JSON file
     def jsonContent = readFile(file: 'sample.json')
