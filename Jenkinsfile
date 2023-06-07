@@ -26,7 +26,7 @@ node {
     sh "echo Deploying to region ${env.REGION_NAME}"
 
     // Check if the region is enabled
-    if (env.REGION_ENABLED) {
+    if (env.REGION_ENABLED == true) {
       sh "echo Region is enabled"
     } else {
       sh "echo Region is not enabled"
