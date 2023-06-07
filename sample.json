@@ -4,7 +4,7 @@
     {
       "name": "us-east-1",
       "version": "1.0.20",
-      "enable": true
+      "enable": false
     },
     {
       "name": "eu-west-2",
