@@ -4,12 +4,12 @@
     {
       "name": "us-east-1",
       "version": "1.0.20",
-      "enable": false
+      "enable": true
     },
     {
       "name": "eu-west-2",
       "version": "1.0.18",
-      "enable": true
+      "enable": false
     }
   ]
 }
